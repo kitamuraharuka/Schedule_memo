@@ -54,6 +54,7 @@
 
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+                @yield('contents')
                 @yield('content')
             </main>
         </div>

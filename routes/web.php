@@ -21,6 +21,8 @@
 //★トップ画面ルーティング//
 Route::get('/','TopController@index')->name('home');
 
+
+
 //★スケジュールルーティング
 Route::group(['prefix' => 'schedule'], function() {
      

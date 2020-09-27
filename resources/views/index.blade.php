@@ -1,12 +1,27 @@
 @extends('layouts.schememo')
+{{-- カレンダー --}}
+@section('contents')
+<div class="container">
+   <div class="row justify-content-center">
+       <div class="col-lg-8">
+           <div class="card">
+               <div class="card-header">{{ $calendar->getTitle() }}</div>
+               <div class="card-body">
+					{!! $calendar->render() !!}
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+@endsection
 
+{{-- 日記 --}}
 @section('content')
     <div class="container mt-4">
         
      　 　<div class="col-md-4">
                 <a href="{{ action('DiaryController@add') }}" role="button" class="btn btn-primary">日記投稿</a>
         　</div>
-            
         @foreach ($posts as $post)
             <div class="card mb-4">
                 <div class="card-body">
@@ -26,12 +41,7 @@
                 </div>
                 
             </div>
-           
         @endforeach
-        
          {{ $posts->appends(request()->input())->links() }}
-
     </div>
-    
-  
 @endsection
