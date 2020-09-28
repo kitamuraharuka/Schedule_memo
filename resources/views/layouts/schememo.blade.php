@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+     
+                <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+               
+
+            
+            
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +36,7 @@
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>
+            
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -58,5 +68,8 @@
                 @yield('content')
             </main>
         </div>
+        
+            
+            
     </body>
 </html>

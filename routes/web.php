@@ -20,7 +20,7 @@
 
 //★トップ画面ルーティング//
 Route::get('/','TopController@index')->name('home');
-
+Route::get('/getSchedule', 'TopController@getSchedule')->name('home');;
 
 
 //★スケジュールルーティング

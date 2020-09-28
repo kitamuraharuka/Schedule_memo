@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 use App\Schedule;
 
 class ScheduleController extends Controller
@@ -17,7 +16,7 @@ class ScheduleController extends Controller
 //新規作成画面　新規作成
    public function create(Request $request)
    {
-       //ヴァリデーションを行う　Diaryは/app/Diary.php
+       //ヴァリデーションを行う　
        $this->validate($request, Schedule::$rules);
        $schedule = new Schedule;
        $form = $request->all();

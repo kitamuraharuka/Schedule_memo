@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>日記新規作成</h2>
+                
                 <form action="{{ action('DiaryController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)

@@ -25,6 +25,33 @@ public function index(Request $request)
       }
       return view('index', ['posts' => $posts, 'cond_diary' => $cond_diary, "calendar" => $calendar]);
   }
+  
+  
+  
+  public function getSchedule(Request $request)
+  {
+    $day = $request ->input('day');
+    
+    //$schedules = Schedule::where('date', $day)->get();
+
+       $schedules = [
+            [
+                "day" => $day,
+                "time" => "19:00〜20:00",
+                "schedule" => "メンタリング"
+            ],
+            [
+                "day" => $day,
+                "time" => "20:00〜21:00",
+                "schedule" => "片付け"
+            ]
+        ];
+        
+        
+        return response()->json($schedules);
+
+  }
+  
 
 }
 

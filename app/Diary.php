@@ -11,4 +11,6 @@ class Diary extends Model
     //ヴァリデーション//
     public static $rules = array(
         'diary' => 'required');
+        
+        
 }

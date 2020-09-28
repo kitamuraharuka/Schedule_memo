@@ -2,6 +2,9 @@
 {{-- カレンダー --}}
 @section('contents')
 <div class="container">
+    <div class="col-md-4">
+                <a href="{{ action('ScheduleController@add') }}" role="button" class="btn btn-primary">スケジュール登録</a>
+        　</div>
    <div class="row justify-content-center">
        <div class="col-lg-8">
            <div class="card">
@@ -12,7 +15,43 @@
            </div>
        </div>
    </div>
+   <div class="day_schedule"></div>
 </div>
+<style>
+    .day {
+        cursor: pointer;
+    }
+</style>
+<script type="text/javascript">
+/*global $*/ 
+
+     $(function() {
+        $('.day').on('click', function () {
+            let day = $('.card-header').text() + $(this).text() + '日';
+            alert('日付' + day + 'がクリックされました。');
+            
+            
+            
+           $.ajax({
+                url: "/getSchedule",
+                data: "day=" + day,
+                success: function(response){
+                    console.log(response);
+                    $('.day_schedule').html('<p>' + response[0]['day'] + 'の予定</p>' );
+                    
+                    $.each(response, function(index, val) {
+                        console.log(val);
+                        $('.day_schedule p').append('<br><span>' + val['time'] + '：' + val['schedule'] + '</span>');
+                        
+                      
+                    })
+                }
+            });
+        })
+    });
+
+</script>
+
 @endsection
 
 {{-- 日記 --}}
