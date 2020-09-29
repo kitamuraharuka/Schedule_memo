@@ -15,7 +15,7 @@
                             @endforeach
                         </ul>
                     @endif
-                     <form class="form-inline">
+                     <div class="form-inline">
                            
                         <div class="form-group row">
                             <label class="col-md-2">開始時刻</label>
@@ -30,7 +30,7 @@
                                 <input type="datetime-local" class="form-control" name="end_datetime" value="format('Y-m-d\TH:i') " >
                             </div>
                         </div>
-                    </form>
+                    </div>
                     
                         <div class="form-group row">
                             <label class="col-md-2">スケジュール</label>

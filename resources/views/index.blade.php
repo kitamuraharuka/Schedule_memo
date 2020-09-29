@@ -22,13 +22,14 @@
         cursor: pointer;
     }
 </style>
+
 <script type="text/javascript">
 /*global $*/ 
 
      $(function() {
         $('.day').on('click', function () {
             let day = $('.card-header').text() + $(this).text() + '日';
-            alert('日付' + day + 'がクリックされました。');
+            alert('日付' + day + 'がクリックされました。'+'予定');
             
             
             

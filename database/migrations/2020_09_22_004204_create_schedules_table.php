@@ -18,9 +18,11 @@ class CreateSchedulesTable extends Migration
             $table->dateTime('start_datetime');
             $table->dateTime('end_datetime');
             $table->string('schedule');
+            $table->timestamps();
             
         });
     }
+    
 
     /**
      * Reverse the migrations.

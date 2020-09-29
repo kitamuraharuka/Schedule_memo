@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Diary;
 use App\Calendar\CalendarView;
+use App\Schedule;
+
 
 
 class TopController extends Controller
@@ -27,31 +29,13 @@ public function index(Request $request)
   }
   
   
-  
-  public function getSchedule(Request $request)
+   public function getSchedule(Request $request)
   {
-    $day = $request ->input('day');
-    
-    //$schedules = Schedule::where('date', $day)->get();
+      $day = $request->input('day');
+    $schedules = Schedule::where('date', $day)->get();
 
-       $schedules = [
-            [
-                "day" => $day,
-                "time" => "19:00〜20:00",
-                "schedule" => "メンタリング"
-            ],
-            [
-                "day" => $day,
-                "time" => "20:00〜21:00",
-                "schedule" => "片付け"
-            ]
-        ];
-        
-        
         return response()->json($schedules);
 
-  }
-  
-
+}
 }
 
